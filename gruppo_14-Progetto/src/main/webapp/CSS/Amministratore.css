@@ -1,0 +1,97 @@
+body{
+    background: linear-gradient(135deg,white,white, #3b0591);
+    background-attachment: fixed;
+}
+
+#dashboard{
+    /*quantità di schermo occupata*/
+    width:25%;
+    height: 100%;
+
+    /*per far partire dashboard da fine header*/
+    position: absolute;
+    top:189px;
+
+    /*perchè stia dietro footer*/
+    z-index: 0;
+    background-color: #3b0591;
+    color: white;
+
+    /*border*/
+    border-right-style: double;
+    border-width: 10px;
+    border-color: #f4f4f4;
+}
+
+/*Per avere il titolo "OPZIONI" allineato alla lista di bottoni per tentativi*/
+#dashboard h1{
+    text-align: center;
+    width: 110%;
+
+    text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
+
+/*spazi elenco puntato dashboard*/
+#dashboard ul{
+    list-style-type: none;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    border-left: #000;
+}
+
+/*spazi elementi elenco puntato dashboard*/
+#dashboard ul li{
+    color: #000;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+/**/
+#dashboard ul li button{
+    width: 110%;
+}
+
+/*impostazioni colore diverse per amministratore*/
+button:hover {
+    background-color: #b293e4;
+    cursor: pointer;
+}
+
+/*per far cominciare areVisualizzazioni quando finisce header*/
+#areaVisualizzazione{
+    margin-left: 25%;
+}
+
+/*aggiungo spazi e bordo a div id=Utente per rendere la pagina più leggibile*/
+#Utente {
+    border-bottom: 2px solid #020203;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2.5%;
+    padding: 2%;
+}
+
+/*impostazioni div che contiene grafici*/ 
+#container{
+    border: 10px double rgb(5, 5, 5);
+    margin: 0 auto;
+    width: 75%;
+}  
+
+/*per centrare titolo rispetto a container*/
+h1{
+    text-align: center;
+}
+
+/*per centrare button con id=reset rispetto a container*/
+#reset{
+    margin-left: 25%;
+}
+
+
+

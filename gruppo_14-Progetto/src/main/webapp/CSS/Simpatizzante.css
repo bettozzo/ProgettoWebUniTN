@@ -1,0 +1,120 @@
+body{
+    background: linear-gradient(-135deg,white,white, #f6de07);
+    background-attachment: fixed;
+}
+
+header{
+    background-color: #f9e743;
+}
+
+#dashboard{
+    /*centra elementi al suo interno*/
+    text-align: center;
+    
+    /*quantità di schermo occupata*/
+    margin-left: 75%;
+    width:25%;
+    height: 100%;
+
+    /*per far partire dashboard da fine header*/
+    position: fixed;    
+    top:189px;
+
+    /*perchè stia dietro footer*/
+    z-index: 0;
+    background-color: #f6de07;
+    color: white;
+
+    /*border*/
+    border-left-style: double;
+    border-width: 10px;
+    border-color: #f4f4f4;
+}
+
+/*Per avere il titolo "OPZIONI" allineato alla lista di bottoni*/
+#dashboard h1{
+    text-align: center;
+    width: 100%;
+
+    text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
+
+/*spazi elenco puntato dashboard*/
+#dashboard ul{
+    list-style:none;
+    display:inline-block;
+    text-align: center;
+    
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    
+}
+
+/*spazi elementi elenco puntato dashboard*/
+#dashboard ul li{
+}
+
+/**/
+#dashboard ul li button{
+    width: 100%;
+}
+
+/*impostazioni colore diverse per amministratore*/
+button:hover {
+    background-color: #f9e743;
+    cursor: pointer;
+}
+
+/*per far cominciare areVisualizzazioni quando finisce header*/
+#areaVisualizzazione{
+    margin-right: 25%;
+}
+
+/*aggiungo spazi e bordo a div id=Utente per rendere la pagina più leggibile*/
+#Utente {
+    border-bottom: 2px solid #020203;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2.5%;
+    padding: 2%;
+}
+
+/*impostazioni div che contiene grafici*/ 
+#container{
+    border: 10px double rgb(5, 5, 5);
+    margin: 0 auto;
+    width: 75%;
+}  
+
+/*poichè in generale era centrato*/
+h2{
+    text-align: left;
+}
+/*per centrare button con id=reset rispetto a container*/
+#reset{
+    margin-left: 25%;
+}
+
+/*setto la dimensione delle immagini delle attività*/
+#img1, #img2, #img3{
+    width: 200px;
+    height: 150px;
+}
+
+/*Gli elementi in una row si dispongono autonomamente*/
+.row{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-align: center;
+}
+
+/*per la scritta "Sei iscritto a questa attività!"*/
+.row p{
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15%;
+}

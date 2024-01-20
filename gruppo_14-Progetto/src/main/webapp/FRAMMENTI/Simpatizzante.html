@@ -1,0 +1,64 @@
+<div class="wrapper">
+    <div id="dashboard">
+        <ul>
+            <h1>OPZIONI</h1>
+            <li><button type="button" onclick=mostraDati()> Visualizza i dati personali</button></li>
+            <li><button type="button" onclick=scegliAttivita()> Iscriviti alle attività </button></li>
+            <li><button type="button" onclick=cancelliTutto()> Cancella iscrizione </button></li>
+        </ul>
+    </div>
+
+    <div id="areaVisualizzazione">
+        <h1>
+            Area personale del simpatizzante.
+        </h1>
+
+        <div id="dati" style="display:none">
+
+        </div>
+
+        <div id="attivita" style="display:none">
+            <h2>Scegli attività alla quale vorresti iscriversi:</h2>
+            <div class="row">
+                <div class="column"><input type="image" src="./IMMAGINI/medico.jpg" alt="Medico" id="img1" onclick="iscrizione('img1', 'conferma1', 'box1')"></div>
+                <div class="column"><input type="image" src="./IMMAGINI/insegnante.jpg" alt="Insegnante" id="img2" onclick="iscrizione('img2', 'conferma2', 'box2')"></div>
+                <div class="column"><input type="image" src="./IMMAGINI/fundraising.jpg" alt="fundraising" id="img3" onclick="iscrizione('img3', 'conferma3', 'box3')"></div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <input type="checkbox" id="box1" onclick="iscrizione('img1', 'conferma1', 'box1')">
+                    <label class="container" for="box1">&ensp;Interventi in ambito sanitario in Mozambico e Zimbabwe</label>
+                </div>
+                <div class="column">
+                    <input type="checkbox" id="box2" onclick="iscrizione('img2', 'conferma2', 'box2')">
+                    <label class="container" for="box2">&ensp;Supportato le scuole elementari nella provincia di Maputo, Mozambico nella ristrutturazione degli edifici e nella ripresa delle attivit&agrave; didattiche</label>
+                </div>
+                <div class="column">
+                    <input type="checkbox" id="box3" onclick="iscrizione('img3','conferma3', 'box3')">
+                    <label class="container" for="box3">&ensp;Attivit&agrave; di fundraising e sensibilizzazione nelle scuole in Italia</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <p id="conferma1" style="display:none">Sei iscritto a questa attività!</p>
+                </div>
+                <div class="column">
+                    <p id="conferma2" style="display:none">Sei iscritto a questa attività!</p>
+                </div>
+                <div class="column">
+                    <p id="conferma3" style="display:none">Sei iscritto a questa attività!</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="cancellazione" style="display:none">
+            <h2>Vorresti cancellare la tua iscrizione al sito? Sei sicuro?</h2>
+            <button type="submit" id="cancellaDati" onclick=cancellaDati()> Cancella </button>
+            <p id="confermaCancellazione"></p>
+        </div>
+
+        <div id="donazione"></div>
+    </div>
+</div>
+
+<script src="${pageContext.request.contextPath}/JAVASCRIPT/Aderente.js"></script>

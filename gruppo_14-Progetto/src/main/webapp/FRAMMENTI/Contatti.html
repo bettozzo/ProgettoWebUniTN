@@ -1,0 +1,86 @@
+<script src="../JAVASCRIPT/Mail.js"></script>
+
+<div class="conForm">
+    <h1>
+        <br>
+        Contatti
+    </h1>
+    <div class="row">
+        <div class="column">
+            <div class="boxed">
+                <p>
+                    <h4>I nostri contatti:</h4>
+                    via Paolo Fabbri n.42 14000 Canicatt&igrave; Terme (CM) Italia <br><br>
+                    Tel: 0001 433597
+                </p>
+            </div>
+        </div>
+        <div class="column">
+            <p>
+                Hai dubbi, commenti o idee da suggerirci?<br>
+                <b><i>Scrivici!</i></b>
+            </p>
+            <!--onsubmit="sendEmail()"-->
+            <form method="post" onsubmit="return MailValidate()">
+                <div class="row">
+                    <div class="column">
+                        <label for="nome-cognome">Nome e cognome:</label>
+                    </div>
+                    <div class="column">
+                        <input type="text" name="nome e cognome" id="nome-cognome">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="mail">E-mail:</label>
+                    </div>
+                    <div class="column">
+                        <input type="text" name="mail" id="mail">
+                    </div>
+                </div>
+                <!--vanno fuori da table form-->
+                <br>
+                <p>
+                Specificare il motivo per il quale si scrive all'associazione:
+                </p>
+                <!--checkbox-->
+                <div id="elenco">
+                    <div class="elementoElenco">                                    
+                        <input type="checkbox" id="domande" name="domande">
+                        <label for="domande"> Domande</label>
+                    </div>
+                    <div class="elementoElenco">                                    
+                        <input type="checkbox" id="commenti" name="commenti">
+                        <label for="commenti"> Commenti</label>
+                    </div>
+                    <div class="elementoElenco">                                    
+                        <input type="checkbox" id="suggerimenti" name="suggerimenti">
+                        <label for="suggerimenti"> Suggerimenti</label>
+                    </div>
+                    <div class="elementoElenco">      
+                        <input type="checkbox" id="problemi" name="problemi">
+                        <label for="problemi"> Problemi</label>
+                    </div>
+                    <div class="elementoElenco">                                    
+                        <input type="checkbox" id="altro" name="altro">
+                        <label for="altro">Altro</label>
+                    </div>
+                </div>
+                <!--casella testo-->
+                <textarea id="dettagli" name="dettagli" rows="7" cols="70"></textarea>
+                <br><br>
+                <!--tasti-->
+                <div class="row">
+                    <div class="column">
+                        <button type="submit">Invia</button>
+                    </div>
+                    <div class="column">
+                        <button type="reset">Reset</button>
+                    </div>
+                </div>                        
+            </form>
+        </div>
+
+    </div>
+        
+</div>

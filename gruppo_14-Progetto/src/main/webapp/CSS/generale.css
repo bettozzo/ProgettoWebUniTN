@@ -1,0 +1,512 @@
+/*------------------------GENERALI---------------------------------------------*/
+*{
+    /*per togliere impostazioni di default che interferiscono
+    = "normalizzo" */
+    margin: 0;
+	padding: 0;
+	border: 0;
+    outline: 0;
+    opacity: 1;
+	background: transparent;
+    font-family: "Georgia", Times, serif;
+    /*considera padding, border e margin in width*/
+    box-sizing: border-box;
+}
+
+/*impostazioni del background della pagina, applicate al body*/
+body {
+    background: linear-gradient(45deg,darkblue, #24AADB , #27DBB1, lightgreen);
+    /*evita che ci siano strane ripetizioni del background con fixed!!!*/
+    background-attachment: fixed;
+}
+
+h1 {
+    padding: 20px;
+}
+
+h2 {
+    padding: 20px;
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+    font-size: 17px;
+    line-height: 22px;
+    max-height: 600px;
+
+}
+
+/*----------------Impostazioni generiche BUTTON----------------------------------------------*/
+button{
+    float:left;
+    margin-bottom: 50px;
+    font-size: 17px;
+    width:50%;
+
+    border:2px solid #0a0505;
+    border-radius: 20px;
+    padding: 3px;
+
+    background-color: #010101; /*sfondo button*/
+    color:#f4f1f1; /*scritta bianca*/
+    box-shadow: 0 0 1px 0.5px #f4f1f1; /*leggera ombreggiatura bianca per far risaltare button*/
+
+}
+
+button:hover{
+    box-shadow: 0 0 5px 2px #444343;
+    background-color: #23c49f;
+    color: #010101;
+    cursor: pointer;
+}
+
+/*---------------------------HEADER-------------------------------------------*/
+header {
+    width:100%;
+    /*colore background sotto l'immagine
+        (se per qualche ragione l'immagine di sfondo non venisse visualizzata)*/
+    background-color: #27DBB1;
+    background-image: url(../IMMAGINI/zimbabwe.jpg);
+    background-position: center;
+    background-size: cover;
+
+    /*centra le scritte*/
+    text-align:center;
+
+    /*per staccare scritte da margini*/
+    padding: 10px 16px;
+
+    /*Stile linea sotto header*/
+    border-bottom-style: double;
+    border-width: 10px;
+    border-color: rgb(8, 8, 8);
+    
+    /*Per fissare header quando raggiunge la posizione 0*/
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+/*sottotitolo header bianco con ombra nera*/
+header h3{
+    color:#F4F4F4;
+    text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
+
+/*OGNI h1 avrà un'ombra bianca*/
+h1{
+    text-shadow: -1px 0 white, 0 2px white, 2px 0 white, 0 -1px white;
+}
+
+/*----------------------------MENU--------------------------------------------*/
+menu{
+    background-color: #0a0505;
+    padding: 10px 16px;
+    text-align:center;
+    
+    /*Per "animazione" riga verde sotto*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*Linea sotto header*/
+    border-bottom-style: double;
+    border-width: 10px;
+    border-color: #F4F4F4;
+
+    position: sticky;
+    top: 127px;
+
+    z-index: 200;
+}
+
+menu ul li{
+    flex: 1;
+    list-style: none;
+    display:inline-block; /*orizzontalmente*/
+    padding: 6px 16px;
+}
+
+menu ul li::after{
+    content: '';
+    width:0%; /*così sta nascosta finchè non ci vai sopra*/
+    height:2px;
+    background: rgb(36, 209, 36);
+    display:block;
+    margin:auto;
+    transition: 0.5s; /*comparsa graduale linea verde*/
+}
+
+menu ul li:hover::after{
+    width:100%; /*effetto animazione linea verde compare*/
+}
+
+menu ul li a{
+    color: #F4F4F4;
+    text-decoration: none;
+}
+
+/*--------------------FOOTER------------------------------------------------*/
+footer{
+    width:100%;
+    background-color: #F4F4F4;
+    text-align:center;
+    justify-content: center;
+
+    /*per staccare scritte da margini*/
+    padding: 10px 16px;
+
+    /*Linea sotto header*/
+    border-top-style: double;
+    border-width: 10px;
+    border-color: rgb(8, 8, 8);
+
+    /*fissato in fondo*/
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+}
+
+/*------------Attivita, ChiSiamo, Descrizioni------------------------------------------ */
+.contenutiTutti{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+
+/*------------in pagina ChiSiamo--------------------------------------------------------*/
+.riconoscimenti h2{
+    padding: 0;
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+figcaption {
+    text-align: center;
+    font-style: oblique;
+    padding-top: 10px;
+}
+
+
+.image{
+    margin-left:15px;
+    margin-right:15px;
+
+    border: 10px;
+    border-style: double;
+    border-color: rgb(6, 7, 6);
+
+    min-width: 500px;
+    max-width: 500px;
+    z-index: -1;
+}
+
+
+/* Create equal columns that floats next to each other */
+.column{
+    float:left;
+    width: 50%;
+    padding: 15px;
+}
+
+.row {
+    padding: 15px;
+    margin-bottom: 20px;
+    width:auto;
+    height: auto;
+}
+
+/* Clear floats after the columns */
+.row::after {
+    content: "";
+    display: table;
+    clear:both;
+}
+
+/* Responsive layout - makes the three columns 
+stack on top of each other instead of next to each other */
+@media(max-width: 700px){
+
+    * {
+        flex:1;
+        
+        justify-content: center;
+        align-content: center;
+    }
+
+    .column {
+        width:100%;
+    }
+    
+    p {
+        font-size: 12px;
+        line-height: 17px;
+        text-align: left;
+    }
+
+    .image {
+        min-width:200px;
+        max-width: 200px;
+    }
+}
+
+/*conForm ----------------per Login, SignIn e Contatti-----------------------------------*/
+.conForm .column{
+    padding: 0;
+}
+
+.conForm .row{
+    margin-bottom: 0px;
+    margin-top: 0;
+}
+
+.conForm input[type=text]{
+    float:left;
+    width:100%;
+
+    border:solid;
+    border-color: #0a0505;
+    border-width: 1px;
+
+    padding: 3px;
+    background-color: #F4F4F4;
+}
+
+.conForm input[type=password]{
+    float:left;
+    width:100%;
+
+    border:solid;
+    border-color: #0a0505;
+    border-width: 1px;
+
+    padding: 3px;
+    background-color: #F4F4F4;
+}
+
+.conForm input[type=checkbox]{
+    float:left;
+}
+
+.conForm input[type=radio]{
+    float:left;
+}
+
+/*creando una leggera ombra quando ci si passa sopra*/
+.conForm input:hover{
+    box-shadow: 0 0 5px 2px #444343;
+}
+
+.conForm input[type=checkbox]:hover{
+    box-shadow: 0 0 0px 0px #444343;
+}
+
+.conForm input[type=radio]:hover{
+    box-shadow: 0 0 0px 0px #444343;
+    
+}
+
+.conForm textarea{
+    border:1px solid #0a0505;
+    
+    padding: 3px;
+    margin-top: 5px;
+    background-color: #F4F4F4;
+}
+
+.conForm p{
+    text-align: left;
+}
+
+/*----------------per pagina Contatti---------------------------------------------------------*/
+.elementoElenco{
+    display:flex;
+    padding: 2px;
+}
+#elenco label{
+    padding-left: 5px;
+}
+
+/*-------------per pagina Login e SignIn----------------------------------------------------*/
+#login{
+    margin-left: 10px;
+}
+
+/*----------in Login e SignIn, quando si inseriscono cose non valide-------------------------*/
+#fallimento{
+    /*sovrascrive i valori di classe .boxed che non ci interessano
+        (distanza dal top e larghezza)*/
+    width: 80%;
+    margin-top: 0;
+
+    display: none;
+}
+
+#fallimento p{
+    font-size: 26px;
+    font-weight: bold;
+
+    /*per centrare il p nel div con id fallimento*/
+    width: 80%;
+    margin:auto;
+
+    color: rgb(232, 0, 0);
+}
+
+
+/*-------------------per POPUP Cookies-------------------------------------------------*/
+#popup {
+    position: fixed;
+    top: 70%;
+    bottom:0;
+    left: 0;
+
+    width:30%;
+    
+    /*distanza dai bordi, bordo e colori*/
+    padding: 15px 20px;
+    border: 10px double  rgb(6, 7, 6);
+    background: #fefefe;
+
+    /*davanti a tutto*/
+    z-index: 1000;
+}
+
+#popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+
+    z-index: 999;
+    overflow: auto;
+}
+
+
+/*----------------------per pagina Homepage---------------------------------------------------------*/
+#homepage #logo{
+    width: 10em;
+    border-radius: 10em;
+    float:left;
+    padding: 5px 0 0 5px;
+
+    /*contorno immagine*/
+    border: 10px;
+    border-style:dotted;
+    border-color: rgb(6, 7, 6);
+}
+
+/*colonna logo più piccola*/
+#column1{
+    width:30%;
+}
+
+/*colonna descrizione e img-descrittiva*/
+#column2{
+    width:70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#p-descrizione{
+    margin-bottom: 10px;
+}
+
+#img-descrittiva{
+    margin: 0em 0em 10em 0em;
+    height: 15em;
+
+    /*contorno immagine*/
+    border: 10px;
+    border-style: double;
+    border-color: rgb(6, 7, 6);
+}
+
+#btn-scarica{
+    width:100%;
+}
+
+/*--------------------per Pagina Attività------------------------------------------------------------------*/
+
+/*fa comparire scritta "Clicca per info" su attività quando passi con mouse*/
+.container:hover .overlay {
+  opacity: 1;
+  bottom: 49%;
+}
+
+.overlay {
+  background: rgba(8, 10, 9, 1); /* Black see-through */
+  
+  position: absolute;
+  bottom: 0;
+  
+  color: #f1f1f1;
+  transition: .7s ease;
+  opacity: 0;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 0px;
+  width:100%;
+}
+
+.container {
+    margin-top: 0.2%;
+    padding: 0.2%;
+    position: relative;
+}
+
+#paginaAttivita .column{
+    width: 33%;
+    height: 600px;
+    background-image: linear-gradient(to right, rgb(4, 3, 3,0.2), rgba(237, 241, 237), rgb(10, 5, 5, 0.2));
+    
+    border:thick;
+    border-style: double;
+    border-color: rgb(6, 7, 6);
+
+    margin-left: 0.1%;
+    margin-right: 0.1%;
+    margin-bottom: 20px;
+}
+
+#paginaAttivita p{
+    text-align: center;
+    padding-top: 50px;
+}
+
+.attivita-img{
+    width: 100%;
+    height: 45%;
+}
+
+.descrizione{
+    padding: 0 5px;
+}
+
+/*-------boxed+conferma per InvioConferma e RegistrazioneConfermata------------*/
+.boxed {
+    border: 7px double rgb(11, 12, 11) ;
+    background-color: #F4F4F4;
+    padding: 10px;
+    margin: auto;
+    width:50%;
+}
+
+.conferma{
+    margin-top: 11em;
+    text-align: center;
+}
+
+
+
